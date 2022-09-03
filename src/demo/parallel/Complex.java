@@ -60,6 +60,14 @@ public class Complex {
         im = imag;
     }
 
+    // for unit tests
+    public double GetRe(Complex a){
+        return a.re;
+    }
+    public  double GetIm(Complex a){
+        return a.im;
+    }
+
     /**
      * Add operation.
      * @param b summand
