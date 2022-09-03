@@ -276,7 +276,7 @@ class MandelbrotSetTask extends Task<Long> {
         Complex c = new Complex(0, 0);
         do {
             //c = c.times(c).plus(comp); old version
-            c = c.plus(comp).plus(c).times(comp);
+            c = c.times(c).times(c).plus(comp).divide(comp); // my own new fractal
             count++;
         } while (count < CAL_MAX_COUNT && c.lengthSQ() < LENGTH_BOUNDARY);
         return count;
