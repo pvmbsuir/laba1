@@ -60,6 +60,14 @@ public class Complex {
         im = imag;
     }
 
+    // for unit tests
+    public double GetRe(Complex a){
+        return a.re;
+    }
+    public  double GetIm(Complex a){
+        return a.im;
+    }
+
     /**
      * Add operation.
      * @param b summand
@@ -70,7 +78,6 @@ public class Complex {
         im += b.im;
         return this;
     }
-
     /**
      * Multiply operation.
      * @param  b multiplier
@@ -84,7 +91,27 @@ public class Complex {
         im = imag;
         return this;
     }
-
+    /**
+     * Dividing operation (own made)
+     *
+     * @param b divider
+     * @return this Complex object whose valuse is this / b
+     */
+    public Complex divide(Complex b){
+        re = (re * b.re + im * b.im) / (b.re * b.re + b.im * b.im);
+        im = (im * b.re - re * b.im) / (b.re * b.re + b.im * b.im);
+        return this;
+    }
+    /**
+     * subtract operation. (own made)
+     * @param b sub
+     * @return this Complex object whose value is (this - b)
+     */
+    public Complex sub(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
     /**
      * Square of Complex object's length, we're using square of length to 
      * eliminate the computation of square root
