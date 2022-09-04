@@ -49,6 +49,16 @@ public class Complex {
     private double re;   // the real part
     private double im;   // the imaginary part
 
+    /*get real part*/
+    public double getRe() {
+        return this.re;
+    }
+
+    /*get imaginary part*/
+    public double getIm() {
+        return this.im;
+    }
+
     /** 
      * create a new object with the given real and imaginary parts
      * 
