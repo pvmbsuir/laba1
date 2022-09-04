@@ -71,6 +71,12 @@ public class Complex {
         return this;
     }
 
+    public double GetRe(Complex a){
+        return a.re;
+    }
+    public  double GetIm(Complex a){
+        return a.im;
+    }
     public Complex sub(Complex b) {
         re -= b.re;
         im -= b.im;
