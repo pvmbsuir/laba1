@@ -83,6 +83,21 @@ public class Complex {
     }
 
     /**
+     * Division operation.
+     * @param b division
+     * @return this Complex object whose value is (this / b)
+     */
+    public Complex divide(Complex b) {
+        Complex a = this;
+        if ((b.re * b.re + b.im * b.im)==0) throw new java.lang.ArithmeticException("division by zero is not possible");
+        double real = (a.re * b.re + a.im * b.im)/(b.re * b.re + b.im * b.im);
+        double imag = (b.re * a.im - a.re * b.im)/(b.re * b.re + b.im * b.im);
+        re = real;
+        im = imag;
+        return this;
+    }
+
+    /**
      * Multiply operation.
      * @param  b multiplier
      * @return this Complex object whose value is this * b
