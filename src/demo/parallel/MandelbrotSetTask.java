@@ -39,10 +39,7 @@ import javafx.scene.paint.Color;
 
 
 /**
- * Task to render Mandelbrot set using given parameters. See {@link 
- * #MandelbrotRendererTask(boolean, javafx.scene.image.PixelWriter, int, int, 
- * double, double, double, double, double, double, double, double, boolean) 
- * constructor} for parameters list. The task returns time in milliseconds as 
+ * Task to render Mandelbrot set using given parameters. See  for parameters list. The task returns time in milliseconds as
  * its calculated value.
  * 
  * <p><i>
@@ -351,13 +348,13 @@ class MandelbrotSetTask extends Task<Long> {
          * Color stops for colors table: color values
          */
         Color[] cc = {
-            Color.rgb(0, 0, 200),
-            Color.RED,
+            Color.rgb(0, 0, 210),
+            Color.WHITE,
             Color.WHITE,
             Color.RED,
-            Color.rgb(0, 200, 0),
+            Color.rgb(0, 210, 0),
             Color.RED,
-            Color.rgb(200, 0, 0)
+            Color.rgb(210, 0, 0)
         };
         
         /**
