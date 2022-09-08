@@ -45,7 +45,7 @@ import javafx.scene.paint.Color;
  * constructor} for parameters list. The task returns time in milliseconds as 
  * its calculated value.
  * 
- * <p><i>
+ * <p><i>Color
  * This source code is provided to illustrate the usage of a given feature
  * or technique and has been deliberately simplified. Additional steps
  * required for a production-quality application, such as security checks,
@@ -352,11 +352,11 @@ class MandelbrotSetTask extends Task<Long> {
          */
         Color[] cc = {
             Color.rgb(40, 0, 0),
-            Color.RED,
+            Color.BLUEVIOLET,
             Color.WHITE,
-            Color.RED,
+            Color.CYAN,
             Color.rgb(100, 0, 0),
-            Color.RED,
+            Color.BURLYWOOD,
             Color.rgb(50, 0, 0)
         };
         
