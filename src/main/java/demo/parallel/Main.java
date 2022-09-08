@@ -158,12 +158,12 @@ public class Main extends Application {
     /**
      * Image view to present canvas snapshot on screen
      */
-    private ImageView ivCanvasSnapshot = new ImageView();
+    private final ImageView ivCanvasSnapshot = new ImageView();
     
     /**
      * Image view to present whole fractal snapshot during fly animation
      */
-    private ImageView ivGlobalSnapshot = new ImageView();
+    private final ImageView ivGlobalSnapshot = new ImageView();
 
     /**
      * Old rootPane origin coordinates
