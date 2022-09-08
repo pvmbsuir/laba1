@@ -93,4 +93,74 @@ public class Complex {
     public double lengthSQ() {
         return re * re + im * im;
     }
+    
+        public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+
+    /**
+     * Divide operation.
+     * @param  b divider
+     * @return this Complex object whose value is this/b
+     */
+    public Complex divide(Complex b){
+        Complex conjugateNumber = getConjugateNumber(b);
+        Complex numeratorOfTheFraction = this.times(conjugateNumber);
+        Complex denominatorOfTheFraction = b.times(conjugateNumber);
+
+        try {
+            return new Complex(numeratorOfTheFraction.re / denominatorOfTheFraction.re,
+                    numeratorOfTheFraction.im / denominatorOfTheFraction.re);
+        }
+
+        catch (ArithmeticException a){
+            throw new ArithmeticException("Error!Division by 0.");
+        }
+    }
+
+    /**
+     * Get conjugate number
+     * @param number
+     * @return number with other im
+     */
+    public Complex getConjugateNumber(Complex number){
+        return new Complex(number.re,-number.im);
+    }
+
+        /**
+     * Cos(z) operation.
+     * @return cos(z)
+     */
+    public Complex getCos(){
+        return new Complex(Math.cos(this.re)*Math.cosh(this.im), -Math.sin(this.re)*Math.sinh(this.im));
+    }
+
+    /**
+     * My Math.pow for complex number
+     * @param degree for pow complex number
+     * @throws ArithmeticException if will be division by 0
+     * @return complex number in this degree
+     */
+    public Complex pow(int degree){
+
+        double module = Math.sqrt(lengthSQ());
+        double cornerFi;
+        try{
+            cornerFi = Math.atan(im / re);
+        }
+        catch (ArithmeticException a){
+            throw new ArithmeticException("Error");
+        }
+
+        if(im<0 && re<0)
+            cornerFi-= Math.PI;
+        if(re<0 && im>0)
+            cornerFi+=Math.PI;
+
+        this.re = Math.abs(Math.pow(module,degree))*Math.cos(degree*cornerFi);
+        this.im = Math.abs(Math.pow(module,degree))*Math.sin(degree*cornerFi);
+        return this;
+    }
 }
