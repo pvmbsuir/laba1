@@ -106,4 +106,12 @@ public class Complex {
         else
             return new Complex((re * c.re + im * c.im) / denom, (im * c.re - re * c.im) / denom);
     }
+
+    public double getRe() {
+        return re;
+    }
+
+    public double getIm() {
+        return im;
+    }
 }
