@@ -70,13 +70,24 @@ public class Complex {
         im += b.im;
         return this;
     }
-
+    public Complex sub(Complex b){
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+    public Complex conj() {
+        im = -im;
+        return this;
+    }
+    public double len2() {
+        return re * re + im * im;
+    }
     /**
      * Multiply operation.
      * @param  b multiplier
      * @return this Complex object whose value is this * b
      */
-    public Complex times(Complex b) {
+    public Complex mul(Complex b) {
         Complex a = this;
         double real = a.re * b.re - a.im * b.im;
         double imag = a.re * b.im + a.im * b.re;
@@ -84,6 +95,15 @@ public class Complex {
         im = imag;
         return this;
     }
+    public Complex mul(double b) {
+        re += b;
+        im *= b;
+        return this;
+    }
+    public Complex div(Complex b) {
+        return this.mul(b.conj()).mul(1 / b.len2());
+    }
+
 
     /**
      * Square of Complex object's length, we're using square of length to 
