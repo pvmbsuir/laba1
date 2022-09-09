@@ -93,4 +93,25 @@ public class Complex {
     public double lengthSQ() {
         return re * re + im * im;
     }
+
+    /**
+     * Divide operation.
+     * @param c divisor
+     * @return this Complex object whose value is this / c
+     */
+    public Complex dividedBy(Complex c) {
+        double denom = c.re * c.re + c.im * c.im;
+        if (denom == 0)
+            return new Complex(Double.NaN,Double.NaN);
+        else
+            return new Complex((re * c.re + im * c.im) / denom, (im * c.re - re * c.im) / denom);
+    }
+
+    public double getRe() {
+        return re;
+    }
+
+    public double getIm() {
+        return im;
+    }
 }
