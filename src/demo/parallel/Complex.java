@@ -59,7 +59,19 @@ public class Complex {
         re = real;
         im = imag;
     }
-
+    public Complex(Complex b) {
+        re = b.re;
+        im = b.im;
+    }
+    public double real(){
+        return re;
+    }
+    public double im(){
+        return im;
+    }
+    public boolean equal(Complex b){
+        return re == b.re && im == b.im;
+    }
     /**
      * Add operation.
      * @param b summand
@@ -70,18 +82,32 @@ public class Complex {
         im += b.im;
         return this;
     }
+    public Complex sub(Complex b){
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+    public Complex conj() {
+        im = -im;
+        return this;
+    }
 
     /**
      * Multiply operation.
      * @param  b multiplier
      * @return this Complex object whose value is this * b
      */
-    public Complex times(Complex b) {
+    public Complex mul(Complex b) {
         Complex a = this;
         double real = a.re * b.re - a.im * b.im;
         double imag = a.re * b.im + a.im * b.re;
         re = real;
         im = imag;
+        return this;
+    }
+    public Complex mul(double b) {
+        re *= b;
+        im *= b;
         return this;
     }
 
