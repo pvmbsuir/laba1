@@ -59,7 +59,19 @@ public class Complex {
         re = real;
         im = imag;
     }
-
+    public Complex(Complex b) {
+        re = b.re;
+        im = b.im;
+    }
+    public double real(){
+        return re;
+    }
+    public double im(){
+        return im;
+    }
+    public boolean equal(Complex b){
+        return re == b.re && im == b.im;
+    }
     /**
      * Add operation.
      * @param b summand
@@ -79,9 +91,7 @@ public class Complex {
         im = -im;
         return this;
     }
-    public double len2() {
-        return re * re + im * im;
-    }
+
     /**
      * Multiply operation.
      * @param  b multiplier
@@ -96,14 +106,10 @@ public class Complex {
         return this;
     }
     public Complex mul(double b) {
-        re += b;
+        re *= b;
         im *= b;
         return this;
     }
-    public Complex div(Complex b) {
-        return this.mul(b.conj()).mul(1 / b.len2());
-    }
-
 
     /**
      * Square of Complex object's length, we're using square of length to 
