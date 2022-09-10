@@ -59,7 +59,7 @@ public class Complex {
         re = real;
         im = imag;
     }
-     
+
     /**
      * Add operation.
      * @param b summand
@@ -70,7 +70,11 @@ public class Complex {
         im += b.im;
         return this;
     }
-
+    public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
     /**
      * Multiply operation.
      * @param  b multiplier
