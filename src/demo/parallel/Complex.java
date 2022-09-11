@@ -45,15 +45,15 @@ package demo.parallel;
  * @author Alexander Kouznetsov, Tristan Yan
  */
 public class Complex {
-    
+
     private double re;   // the real part
     private double im;   // the imaginary part
 
-    /** 
+    /**
      * create a new object with the given real and imaginary parts
-     * 
+     *
      * @param real a complex number real part
-     * @param imag a complex number imaginary part 
+     * @param imag a complex number imaginary part
      */
     public Complex(double real, double imag) {
         re = real;
@@ -62,6 +62,7 @@ public class Complex {
 
     /**
      * Add operation.
+     *
      * @param b summand
      * @return this Complex object whose value is (this + b)
      */
@@ -73,7 +74,8 @@ public class Complex {
 
     /**
      * Multiply operation.
-     * @param  b multiplier
+     *
+     * @param b multiplier
      * @return this Complex object whose value is this * b
      */
     public Complex times(Complex b) {
@@ -86,11 +88,48 @@ public class Complex {
     }
 
     /**
-     * Square of Complex object's length, we're using square of length to 
+     * Square of Complex object's length, we're using square of length to
      * eliminate the computation of square root
+     *
      * @return square of length
-    */
+     */
     public double lengthSQ() {
         return re * re + im * im;
     }
-}
+
+    public Complex sub(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+
+    public Complex div(Complex b) {
+        if (b.re == 0 && b.im == 0)
+            return this;
+        else {
+            Complex a = this;
+            double real = (a.re * b.re + a.im * b.im) / (b.re * b.re + b.im * b.im);
+            double imag = (b.re * a.im - a.re * b.im) / (b.re * b.re + b.im * b.im);
+            re = real;
+            im = imag;
+        }
+        return this;
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Complex complex = (Complex) o;
+
+        if (Double.compare(complex.re, re) != 0) {
+            return false;
+        }
+        return Double.compare(complex.im, im) == 0;
+    }
+    }
+

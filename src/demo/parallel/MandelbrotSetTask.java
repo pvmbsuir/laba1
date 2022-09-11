@@ -31,11 +31,12 @@
 package demo.parallel;
 
 
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.IntStream;
 import javafx.concurrent.Task;
 import javafx.scene.image.PixelWriter;
 import javafx.scene.paint.Color;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.IntStream;
 
 
 /**
@@ -275,7 +276,7 @@ class MandelbrotSetTask extends Task<Long> {
         int count = 0;
         Complex c = new Complex(0, 0);
         do {
-            c = c.times(c).plus(comp);
+            c = c.times(c).plus(comp).times(comp).sub(comp).div(comp).div(comp);
             count++;
         } while (count < CAL_MAX_COUNT && c.lengthSQ() < LENGTH_BOUNDARY);
         return count;
@@ -351,15 +352,15 @@ class MandelbrotSetTask extends Task<Long> {
          * Color stops for colors table: color values
          */
         Color[] cc = {
-            Color.rgb(40, 0, 0),
-            Color.RED,
-            Color.WHITE,
-            Color.RED,
-            Color.rgb(100, 0, 0),
-            Color.RED,
-            Color.rgb(50, 0, 0)
+            Color.rgb(20, 0, 0),
+            Color.PINK,
+            Color.ORANGE,
+            Color.PINK,
+            Color.rgb(90, 0, 0),
+            Color.PINK,
+            Color.rgb(40, 0, 0)
         };
-        
+
         /**
          * Color stops for colors table: relative position in the table
          */
