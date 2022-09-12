@@ -85,6 +85,15 @@ public class Complex {
         return this;
     }
 
+    // return a new Complex object whose value is this - b
+    public Complex minus(Complex b) {
+        Complex a = this;
+        double real = a.re - b.re;
+        double imag = a.im - b.im;
+
+        return new Complex(real, imag);
+    }
+
     /**
      * Square of Complex object's length, we're using square of length to 
      * eliminate the computation of square root
