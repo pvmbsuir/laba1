@@ -71,6 +71,13 @@ public class Complex {
         return this;
     }
 
+    public Complex cosin(Complex b) {
+        b.re = Math.cos(b.re)*Math.cosh(b.im);
+        b.im = Math.sin(b.re)*Math.sinh(b.im);
+
+        return b;
+    }
+
     /**
      * Multiply operation.
      * @param  b multiplier
