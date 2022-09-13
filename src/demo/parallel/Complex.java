@@ -78,8 +78,10 @@ public class Complex {
     }
 
     public Complex div(Complex b){
-        re = (re*b.re + im*b.im)/(b.re*b.re + b.im*b.im);
-        im = (b.re*im - re*b.im)/(b.re*b.re + b.im*b.im);
+        double real = (re * b.re + im * b.im) / (b.re * b.re + b.im * b.im);
+        double imagin = (b.re * im - re * b.im) / (b.re * b.re + b.im * b.im);
+        re = real;
+        im = imagin;
         return this;
     }
 
@@ -95,6 +97,14 @@ public class Complex {
         re = real;
         im = imag;
         return this;
+    }
+
+    public double getIm() {
+        return im;
+    }
+
+    public double getRe() {
+        return re;
     }
 
     /**
