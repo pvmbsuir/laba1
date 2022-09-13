@@ -1015,9 +1015,10 @@ public class Main extends Application {
             double b = p1y;
             double c = p2y;
 
-            u = a - 2 * b + c;
-            v = b * b - a * c;
+            u = a - 2 * b +  c * c;
+            v = b * b - 2 * a * c;
             w = a - b;
+
         }
 
         private void prepareNextFrame() {
