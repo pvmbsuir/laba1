@@ -76,6 +76,10 @@ public class Complex {
         return this;
     }
 
+    public double getRe(){return re;}
+
+    public double getIm(){return im;}
+
     /**
      * Add operation.
      * @param b summand
