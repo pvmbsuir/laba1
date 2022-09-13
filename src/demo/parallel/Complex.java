@@ -31,6 +31,9 @@
 package demo.parallel;
 
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 /**
  * A complex number is a number that can be expressed in the form a + b * i, where
  * a and b are real numbers and i is the imaginary unit, which satisfies the
@@ -49,6 +52,13 @@ public class Complex {
     private double re;   // the real part
     private double im;   // the imaginary part
 
+    public double getRe(){
+        return re;
+    }
+
+    public double getIm(){
+        return im;
+    }
     /** 
      * create a new object with the given real and imaginary parts
      * 
@@ -82,6 +92,24 @@ public class Complex {
         double imag = a.re * b.im + a.im * b.re;
         re = real;
         im = imag;
+        return this;
+    }
+
+    public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+
+    public Complex dividedBy(Complex b) {
+        BigDecimal re1 = new BigDecimal(re);
+        BigDecimal re2 = new BigDecimal(b.re);
+        BigDecimal im1 = new BigDecimal(im);
+        BigDecimal im2 = new BigDecimal(b.im);
+        double c = re2.multiply(re2).doubleValue() + im2.multiply(im2).doubleValue();
+        re = (re * b.re + im * b.im) / c;
+        double f = im1.multiply(re2).doubleValue() - re1.multiply(im2).doubleValue();
+        im = (new BigDecimal(f)).divide(new BigDecimal(c),100, RoundingMode.HALF_UP).doubleValue();
         return this;
     }
 
