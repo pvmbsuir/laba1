@@ -280,6 +280,12 @@ class MandelbrotSetTask extends Task<Long> {
         return count;
     }
 
+//    private int calcOperation(Complex comp){
+//        Complex c = new Complex(0, 0);
+//        c = c.times(c).plus(comp).times(c);
+//        return c
+//    }
+
     /**
      * Calculates a color of a given pixel on the image using 
      * {@link #calc(demo.parallel.Complex) } method.
