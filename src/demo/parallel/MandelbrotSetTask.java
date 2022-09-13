@@ -335,7 +335,7 @@ class MandelbrotSetTask extends Task<Long> {
      */
     private Color getColor(int count) {
         if (count >= colors.length) {
-            return Color.BLACK;
+            return Color.CYAN;
         }
         return colors[count];
     }
@@ -351,13 +351,13 @@ class MandelbrotSetTask extends Task<Long> {
          * Color stops for colors table: color values
          */
         Color[] cc = {
-            Color.CYAN,
+            Color.PURPLE,
             Color.RED,
             Color.WHITE,
             Color.RED,
-            Color.AQUA,
+            Color.YELLOW,
             Color.RED,
-            Color.AZURE
+            Color.RED
         };
         
         /**
