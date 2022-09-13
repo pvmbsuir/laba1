@@ -49,16 +49,6 @@ public class Complex {
     private double re;   // the real part
     private double im;   // the imaginary part
 
-    /*get real part*/
-    public double getRe() {
-        return this.re;
-    }
-
-    /*get imaginary part*/
-    public double getIm() {
-        return this.im;
-    }
-
     /** 
      * create a new object with the given real and imaginary parts
      * 
@@ -89,21 +79,6 @@ public class Complex {
     public Complex minus(Complex b) {
         re -= b.re;
         im -= b.im;
-        return this;
-    }
-
-    /**
-     * Division operation.
-     * @param b division
-     * @return this Complex object whose value is (this / b)
-     */
-    public Complex divide(Complex b) {
-        Complex a = this;
-        if ((b.re * b.re + b.im * b.im)==0) throw new java.lang.ArithmeticException("division by zero is not possible");
-        double real = (a.re * b.re + a.im * b.im)/(b.re * b.re + b.im * b.im);
-        double imag = (b.re * a.im - a.re * b.im)/(b.re * b.re + b.im * b.im);
-        re = real;
-        im = imag;
         return this;
     }
 
