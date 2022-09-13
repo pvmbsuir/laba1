@@ -70,7 +70,17 @@ public class Complex {
         im += b.im;
         return this;
     }
-
+    public boolean comp(Complex b) {
+        if(re == b.re && im==b.im){
+            return true;
+        }
+        else return false;
+    }
+    public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
     /**
      * Multiply operation.
      * @param  b multiplier
