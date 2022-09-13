@@ -99,4 +99,12 @@ public class Complex {
         this.im -= number.im;
         return this;
     }
+
+    public double getRe() {
+        return re;
+    }
+
+    public double getIm() {
+        return im;
+    }
 }
