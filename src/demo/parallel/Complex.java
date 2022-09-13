@@ -60,6 +60,10 @@ public class Complex {
         im = imag;
     }
 
+    public double getRe(){return re;}
+
+    public double getIm(){return im;}
+
     /**
      * Add operation.
      * @param b summand
@@ -82,6 +86,11 @@ public class Complex {
         double imag = a.re * b.im + a.im * b.re;
         re = real;
         im = imag;
+        return this;
+    }
+    public Complex ymn(Complex b) {
+        re *= b.re;
+        im *= b.im;
         return this;
     }
 
