@@ -60,6 +60,7 @@ public class Complex {
         im = imag;
     }
 
+
     /**
      * Add operation.
      * @param b summand
@@ -69,6 +70,23 @@ public class Complex {
         re += b.re;
         im += b.im;
         return this;
+    }
+    public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+    /**
+     * Divide operation.
+     * @param c divisor
+     * @return this Complex object whose value is this / c
+    */
+    public Complex dividedBy(Complex c) {
+    double denom = c.re *c.re + c.im * c.im;
+    if (denom == 0)
+    return new Complex(Double.NaN,Double.NaN);
+    else
+    return new Complex((re * c.re + im * c.im) / denom, (im * c.re - re * c.im) / denom);
     }
 
     /**
@@ -93,4 +111,6 @@ public class Complex {
     public double lengthSQ() {
         return re * re + im * im;
     }
+
+
 }
