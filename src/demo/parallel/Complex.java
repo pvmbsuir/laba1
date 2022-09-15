@@ -71,6 +71,12 @@ public class Complex {
         return this;
     }
 
+    public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+
     /**
      * Multiply operation.
      * @param  b multiplier
@@ -93,4 +99,22 @@ public class Complex {
     public double lengthSQ() {
         return re * re + im * im;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Complex complex = (Complex) o;
+
+        if (Double.compare(complex.re, re) != 0) {
+            return false;
+        }
+        return Double.compare(complex.im, im) == 0;
+    }
+
 }
