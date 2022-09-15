@@ -72,6 +72,18 @@ public class Complex {
     }
 
     /**
+     * Sub operation.
+     * @param b subbed
+     * @return this Complex object whose value is (this - b)
+     */
+
+    public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+
+    /**
      * Multiply operation.
      * @param  b multiplier
      * @return this Complex object whose value is this * b
@@ -80,6 +92,31 @@ public class Complex {
         Complex a = this;
         double real = a.re * b.re - a.im * b.im;
         double imag = a.re * b.im + a.im * b.re;
+        re = real;
+        im = imag;
+        return this;
+    }
+
+    /**
+     * Mod operation.
+     * @return double object whose value is module of Complex this
+     */
+    public double abs() {
+        double mod = Math.sqrt(re * re + im * im);
+        return mod;
+    }
+
+    /**
+     * Div operation.
+     * @param  b devider
+     * @return this Complex object whose value is this/b
+     */
+    public Complex div(Complex b) {
+        Complex a = this;
+        double m = b.abs();
+        double t = a.re * b.re - a.im * b.im;
+        double imag = (a.im * b.re - a.re * b.im) / m;
+        double real = t / m;
         re = real;
         im = imag;
         return this;
