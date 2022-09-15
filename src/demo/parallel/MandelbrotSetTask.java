@@ -275,11 +275,13 @@ class MandelbrotSetTask extends Task<Long> {
         int count = 0;
         Complex c = new Complex(0, 0);
         do {
-            c = c.times(c).times(c).plus(comp);
+            c = c.times(c).minus(new Complex(1,0)).dividedBy(new Complex(1,0 )).times(c).plus(comp);
             count++;
         } while (count < CAL_MAX_COUNT && c.lengthSQ() < LENGTH_BOUNDARY);
         return count;
     }
+
+
 
     /**
      * Calculates a color of a given pixel on the image using 

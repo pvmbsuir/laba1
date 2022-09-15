@@ -72,10 +72,28 @@ public class Complex {
     }
 
     /**
+     * Divide operation.
+     * @param c divisor
+     * @return this Complex object whose value is this / c
+    */
+    public Complex dividedBy(Complex c) {
+    double denom = c.re* c.re + c.im * c.im;
+    if (denom == 0)
+    return new Complex(Double.NaN,Double.NaN);
+    else
+    return new Complex((re * c.re + im * c.im) / denom, (im * c.re - re * c.im) / denom);
+    }
+    public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+    /**
      * Multiply operation.
      * @param  b multiplier
      * @return this Complex object whose value is this * b
      */
+
     public Complex times(Complex b) {
         Complex a = this;
         double real = a.re * b.re - a.im * b.im;
