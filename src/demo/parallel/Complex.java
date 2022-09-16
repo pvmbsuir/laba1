@@ -103,7 +103,7 @@ public class Complex {
      * @param c divisor
      * @return this Complex object whose value is this / c
      */
-    public Complex dividedBy(Complex c) {
+    public Complex divide(Complex c) {
         double denom = c.re * c.re + c.im * c.im;
         if (denom == 0)
             return new Complex(Double.NaN, Double.NaN);
