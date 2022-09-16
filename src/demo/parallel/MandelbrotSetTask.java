@@ -273,7 +273,7 @@ class MandelbrotSetTask extends Task<Long> {
      */
     private int calc(Complex comp) {
         int count = 0;
-        Complex c = new Complex(0, 0);
+        Complex c = new Complex(0.8, 0.2);
         do {
             c = c.times(c).plus(comp);
             count++;
@@ -352,11 +352,11 @@ class MandelbrotSetTask extends Task<Long> {
          */
         Color[] cc = {
             Color.rgb(40, 0, 0),
-            Color.RED,
+            Color.GREEN,
             Color.WHITE,
             Color.RED,
             Color.rgb(100, 0, 0),
-            Color.RED,
+            Color.GREEN,
             Color.rgb(50, 0, 0)
         };
         
