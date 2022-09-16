@@ -23,4 +23,22 @@ public class UnitTest {
         assertEquals(2.0, a.getRe(), 3);
         assertEquals(1.0, a.getIm(), 3);
     }
+
+    @Test
+    public void TestPlus() {
+        Complex a = new Complex(12.3, 1.1);
+        Complex b = new Complex(10.3, 0.1);
+        a = a.plus(b);
+        assertEquals(22.3, a.getRe(), 3);
+        assertEquals(1.2, a.getIm(), 3);
+    }
+
+    @Test
+    public void TestTimes() {
+        Complex a = new Complex(12.3, 1.1);
+        Complex b = new Complex(10.3, 0.1);
+        a = a.times(b);
+        assertEquals(126.58, a.getRe(), 3);
+        assertEquals(12.56, a.getIm(), 3);
+    }
 }
