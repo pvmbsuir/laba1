@@ -86,11 +86,47 @@ public class Complex {
     }
 
     /**
+     * Substract operation.
+     *
+     * @param b summand
+     * @return this Complex object whose value is (this - b)
+     */
+    public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+
+    /**
+     * Divide operation.
+     *
+     * @param c divisor
+     * @return this Complex object whose value is this / c
+     */
+    public Complex divide(Complex c) {
+        double denom = c.re * c.re + c.im * c.im;
+        if (denom == 0)
+            return new Complex(Double.NaN, Double.NaN);
+        else
+            return new Complex((re * c.re + im * c.im) / denom, (im * c.re - re * c.im) / denom);
+    }
+
+
+    /**
      * Square of Complex object's length, we're using square of length to 
      * eliminate the computation of square root
      * @return square of length
     */
     public double lengthSQ() {
         return re * re + im * im;
+    }
+
+
+    public double getRe() {
+        return re;
+    }
+
+    public double getIm() {
+        return im;
     }
 }
