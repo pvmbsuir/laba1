@@ -76,6 +76,13 @@ public class Complex {
         im -= b.im;
         return this;
     }
+    public double getRe() {
+        return re;
+    }
+
+    public double getIm() {
+        return im;
+    }
 
     /**
      * Multiply operation.
