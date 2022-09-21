@@ -93,4 +93,18 @@ public class Complex {
     public double lengthSQ() {
         return re * re + im;
     }
+
+    public double getIm() {
+        return im;
+    }
+
+    public double getRe() {
+        return re;
+    }
+
+    public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
 }
