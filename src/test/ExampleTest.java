@@ -12,7 +12,7 @@ public class ExampleTest {
 
         a.minus(b);
 
-        Assert.assertTrue(a.getRe() == 2);
-        Assert.assertTrue(a.getIm() == 1);
+        Assert.assertEquals(2, a.getRe(), 0.0);
+        Assert.assertEquals(1, a.getIm(), 0.0);
     }
 }
