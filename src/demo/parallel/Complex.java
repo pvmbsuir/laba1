@@ -30,52 +30,30 @@
  */
 package demo.parallel;
 
-
-/**
- * A complex number is a number that can be expressed in the form a + b * i, where
- * a and b are real numbers and i is the imaginary unit, which satisfies the
- * equation i ^ 2 = -1. a is the real part and b is the imaginary part of the
- * complex number.
- * <p><i>
- * This source code is provided to illustrate the usage of a given feature
- * or technique and has been deliberately simplified. Additional steps
- * required for a production-quality application, such as security checks,
- * input validation and proper error handling, might not be present in
- * this sample code.</i>
- * @author Alexander Kouznetsov, Tristan Yan
- */
 public class Complex {
     
     private double re;   // the real part
     private double im;   // the imaginary part
 
-    /** 
-     * create a new object with the given real and imaginary parts
-     * 
-     * @param real a complex number real part
-     * @param imag a complex number imaginary part 
-     */
     public Complex(double real, double imag) {
         re = real;
         im = imag;
     }
 
-    /**
-     * Add operation.
-     * @param b summand
-     * @return this Complex object whose value is (this + b)
-     */
+    public double getRe() {
+        return re;
+    }
+
+    public double getIm() {
+        return im;
+    }
+
     public Complex plus(Complex b) {
         re += b.re;
         im += b.im;
         return this;
     }
 
-    /**
-     * Multiply operation.
-     * @param  b multiplier
-     * @return this Complex object whose value is this * b
-     */
     public Complex times(Complex b) {
         Complex a = this;
         double real = a.re * b.re - a.im * b.im;
@@ -85,12 +63,64 @@ public class Complex {
         return this;
     }
 
-    /**
-     * Square of Complex object's length, we're using square of length to 
-     * eliminate the computation of square root
-     * @return square of length
-    */
     public double lengthSQ() {
         return re * re + im * im;
+    }
+
+        public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+
+    public Complex divide(Complex b){
+        Complex a = this;
+        double real = a.re / b.re - a.im / b.im;
+        double imag = a.re / b.im + a.im / b.re;
+        re = real;
+        im = imag;
+        return this;
+    }
+
+    public Complex getConjugateNumber(Complex number){
+        return new Complex(number.re,-number.im);
+    }
+
+    public Complex getCos(){
+        return new Complex(Math.cos(this.re)*Math.cosh(this.im), -Math.sin(this.re)*Math.sinh(this.im));
+    }
+
+    public Complex pow(int degree){
+
+        double module = Math.sqrt(lengthSQ());
+        double cornerFi;
+        try{
+            cornerFi = Math.atan(im / re);
+        }
+        catch (ArithmeticException a){
+            throw new ArithmeticException("Error");
+        }
+
+        if(im<0 && re<0)
+            cornerFi-= Math.PI;
+        if(re<0 && im>0)
+            cornerFi+=Math.PI;
+
+        this.re = Math.abs(Math.pow(module,degree))*Math.cos(degree*cornerFi);
+        this.im = Math.abs(Math.pow(module,degree))*Math.sin(degree*cornerFi);
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        Complex c = (Complex)o;
+        if((float)c.re==(float)this.re && (float)c.im==(float)this.im)
+            return true;
+        else return  false;
+    }
+
+    @Override
+    public Complex clone(){
+        return new Complex(this.re, this.im);
     }
 }
