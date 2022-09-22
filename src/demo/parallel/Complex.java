@@ -91,6 +91,25 @@ public class Complex {
     }
 
     /**
+     * Division operation
+     * @param b divisor
+     * @return this Complex object whose value is (this / b)
+     */
+    public Complex div(Complex b) {
+        re = (re * b.re + im * b.im) / (b.re * b.re + b.im * b.im);
+        im = (re * b.re - im * b.im) / (b.re * b.re + b.im * b.im);
+        return this;
+    }
+
+    /**
+     * Modulus operation
+     * @return double object whose value is |this|
+     */
+    public double modulus() {
+        return Math.sqrt(re * re + im * im);
+    }
+
+    /**
      * Multiply operation.
      * @param  b multiplier
      * @return this Complex object whose value is this * b
