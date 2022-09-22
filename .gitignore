@@ -5,3 +5,4 @@ out/
 *.swp
 nbproject/
 javafx-sdk-18.0.2/
+junit-4.13.2.jar
