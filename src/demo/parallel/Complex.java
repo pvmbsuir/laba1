@@ -49,6 +49,14 @@ public class Complex {
     private double re;   // the real part
     private double im;   // the imaginary part
 
+    public double getRe() {
+        return re;
+    }
+
+    public double getIm() {
+        return im;
+    }
+
     /** 
      * create a new object with the given real and imaginary parts
      * 
@@ -69,6 +77,36 @@ public class Complex {
         re += b.re;
         im += b.im;
         return this;
+    }
+
+    /**
+     * Subtract operation
+     * @param b subtrahend
+     * @return this Complex object whose value is (this - b)
+     */
+    public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+
+    /**
+     * Division operation
+     * @param b divisor
+     * @return this Complex object whose value is (this / b)
+     */
+    public Complex div(Complex b) {
+        re = (re * b.re + im * b.im) / (b.re * b.re + b.im * b.im);
+        im = (im * b.re - re * b.im) / (b.re * b.re + b.im * b.im);
+        return this;
+    }
+
+    /**
+     * Modulus operation
+     * @return double object whose value is |this|
+     */
+    public double modulus() {
+        return Math.sqrt(re * re + im * im);
     }
 
     /**
