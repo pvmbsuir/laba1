@@ -1,5 +1,6 @@
 package tests;
 
+import demo.parallel.Complex;
 import org.junit.jupiter.api.Test;
 
 public class ApplicationTests {
