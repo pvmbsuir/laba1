@@ -72,6 +72,28 @@ public class Complex {
     }
 
     /**
+     * Subtract operation.
+     * @param  b multiplier
+     * @return this Complex object whose value is this * b
+     */
+    public Complex subtract(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+
+    /**
+     * Divide operation.
+     * @param  b Divider
+     * @return this Complex object whose value is this * b
+     */
+    public Complex divide(Complex b) {
+        re += (re * b.re) / (im * b.im);
+        im += (re * b.im) / (im * b.re);
+        return this;
+    }
+
+    /**
      * Multiply operation.
      * @param  b multiplier
      * @return this Complex object whose value is this * b
