@@ -71,6 +71,14 @@ public class Complex {
         return this;
     }
 
+    public Complex divide(Complex c) {
+        double res = c.re * c.re + c.im * c.im;
+        if (res == 0)
+            return new Complex(Double.NaN,Double.NaN);
+        else
+            return new Complex((re * c.re + im * c.im) / res, (im * c.re - re * c.im) / res);
+    }
+
     /**
      * Multiply operation.
      * @param  b multiplier
@@ -92,5 +100,11 @@ public class Complex {
     */
     public double lengthSQ() {
         return re * re + im * im;
+    }
+    public double getReal(){
+        return re;
+    }
+    public double getImaginary(){
+        return im;
     }
 }
