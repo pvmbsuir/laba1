@@ -36,4 +36,16 @@ public class ComplexTest extends TestCase {
         assertEquals(a0.getRe(), -1.5);
         assertEquals(a0.getIm(), -0.5);
     }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testDivideNull() {
+        Complex a0 = new Complex(-2, 1);
+        Complex b0 = new Complex(0, 0);
+        try{
+            a0.divide(b0);
+        }
+        catch (IllegalArgumentException e){
+            System.out.println("Dividing by null error");
+        }
+    }
 }
