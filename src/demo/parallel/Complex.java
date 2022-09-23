@@ -66,6 +66,7 @@ public class Complex {
     public Complex(double real, double imag) {
         re = real;
         im = imag;
+
     }
 
     /**
