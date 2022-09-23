@@ -359,7 +359,11 @@ class MandelbrotSetTask extends Task<Long> {
             Color.RED,
             Color.rgb(50, 255, 80)
         };
-        
+
+
+
+
+
         /**
          * Color stops for colors table: relative position in the table
          */
