@@ -66,7 +66,6 @@ public class Complex {
     public Complex(double real, double imag) {
         re = real;
         im = imag;
-
     }
 
     /**
@@ -116,7 +115,7 @@ public class Complex {
     }
 
     /**
-     * Square of Complex object's length, we're using square of length to 
+     * Square of Complex object's length, we're using square of length to
      * eliminate the computation of square root
      * @return square of length
      */
