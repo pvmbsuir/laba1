@@ -85,6 +85,25 @@ public class Complex {
         return this;
     }
 
+    public Complex division(Complex b){
+        Complex a = this;
+        double real = (a.re * b.re + a.im * b.im) / (a.im * a.im + b.im * b.im);
+        double imag = (b.re * a.im - a.re * b.im) / (a.im * a.im + b.im * b.im);
+        re = real;
+        im = imag;
+        return this;
+    }
+
+    public Complex pow(int count)
+    {
+        Complex a = this;
+        for (int i = 0; i < count; i++)
+        {
+            a.times(a);
+        }
+        return a;
+    }
+
     /**
      * Square of Complex object's length, we're using square of length to 
      * eliminate the computation of square root
