@@ -70,6 +70,38 @@ public class Complex {
         im += b.im;
         return this;
     }
+    public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+
+        return this;
+    }
+    public double getRe() {
+        return re;
+    }
+
+    public double getIm() {
+        return im;
+    }
+
+    /**
+     * Division operation
+     * @param b divider
+     * @return this Complex object whose value is this / b
+     */
+    public Complex divide(Complex b) {
+        Complex a = this;
+        if (b.re !=0 && b.im !=0) {
+            double real = (a.re * b.re + a.im * b.im) / (b.re * b.re + b.im * b.im);
+            double imag = (a.im * b.re - a.re * b.im) / (b.re * b.re + b.im * b.im);
+            re = real;
+            im = imag;
+        }
+        else {
+            throw new IllegalArgumentException();
+        }
+        return this;
+    }
 
     /**
      * Multiply operation.
