@@ -103,7 +103,7 @@ public class Complex {
      */
     public Complex divide(Complex b) {
         Complex a = this;
-        double real = a.re * b.re - a.im * b.im;
+        double real = a.re * b.re + a.im * b.im;
         double imag = a.im * b.re - a.re * b.im;
         re = real / b.lengthSQ();
         im = imag / b.lengthSQ();
@@ -117,5 +117,21 @@ public class Complex {
     */
     public double lengthSQ() {
         return re * re + im * im;
+    }
+
+    /**
+     * Real part getter
+     * @return real part of a complex number
+     */
+    public double real() {
+        return re;
+    }
+
+    /**
+     * Imaginary part getter
+     * @return Imaginary part of a complex number
+     */
+    public double imaginary() {
+        return im;
     }
 }
