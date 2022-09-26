@@ -44,11 +44,11 @@
 }
 
 .progress-indicator {
-    -fx-progress-color: red;    
+    -fx-progress-color: #00c4ff;
 }
 
 .progress-indicator .percentage {
-    -fx-fill: white;
+    -fx-fill: #ffffff;
 }
 
 .label {
