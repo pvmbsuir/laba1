@@ -49,6 +49,14 @@ public class Complex {
     private double re;   // the real part
     private double im;   // the imaginary part
 
+    public double getRe() {
+        return re;
+    }
+
+    public double getIm() {
+        return im;
+    }
+
     /** 
      * create a new object with the given real and imaginary parts
      * 
@@ -85,6 +93,23 @@ public class Complex {
         return this;
     }
 
+    public Complex divide(Complex b) {
+        re /= b.re;
+        im /= b.im;
+        return this;
+    }
+
+    public Complex multiply(Complex b) {
+        re *= b.re;
+        im *= b.im;
+        return this;
+    }
+
+    public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
     /**
      * Square of Complex object's length, we're using square of length to 
      * eliminate the computation of square root
