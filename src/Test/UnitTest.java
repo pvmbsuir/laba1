@@ -32,9 +32,15 @@ public class UnitTest {
     void testDiversity()
     {
         Complex a = new Complex(2,3);
-        Complex b = new Complex(1,1);
-        Complex c = a.dividedBy(b);
-        assert c.getIm()==0.5 && c.getRe()==2.5;
+        Complex b = new Complex(0,0);
+        if (b.getIm() == 0 && b.getRe() == 0) {
+            Complex c = new Complex(Double.NaN, Double.NaN);
+            assert (c.getIm() == Double.NaN && c.getRe() == Double.NaN);
+        }
+        else {
+            Complex c = a.dividedBy(b);
+            assert c.getIm() == 0.5 && c.getRe() == 2.5;
+        }
     }
 
 }
