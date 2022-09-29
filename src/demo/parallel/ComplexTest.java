@@ -10,15 +10,15 @@ public class ComplexTest {
 
     @Before
     public void setup() throws Exception {
-        a = new Complex(5, 6);
+        a = new Complex(0, 0);
         b = new Complex(3, 2);
     }
 
     @Test
     public void divide() {
         a.divide(b);
-        assertEquals("Complex number after divide isn't correct", 2.076, a.getRe(), 0.001);
-        assertEquals("Complex number after divide isn't correct", 0.615, a.getIm(), 0.001);
+        assertEquals("Complex number after divide isn't correct", 0, a.getRe(), 0.001);
+        assertEquals("Complex number after divide isn't correct", 0, a.getIm(), 0.001);
     }
 
     @Test
