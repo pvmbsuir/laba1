@@ -3,11 +3,6 @@ package demo.parallel;
 import org.junit.Assert;
 import org.junit.Test;
 
-
-
-
-
-
 public class ComplexTest {
 
     @Test
@@ -20,4 +15,12 @@ public class ComplexTest {
     }
 
 
+    @Test
+    public void plus() {
+        Complex a = new Complex(344, 229);
+        Complex b = new Complex(321, 451);
+        Complex trueResult = new Complex(665, 680);
+        Complex calculations = a.plus(b);
+        Assert.assertEquals(trueResult, calculations);
+    }
 }
