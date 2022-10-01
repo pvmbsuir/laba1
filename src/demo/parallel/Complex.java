@@ -74,9 +74,26 @@ public class Complex {
     public Complex cringe(Complex b) {
         re *= b.re;
         re -= b.re;
+
         im *= b.im;
         im += b.im;
         return this;
+    }
+    public Complex base(Complex b) {
+        re += b.re;
+        re /= b.re;
+
+        im -= b.im;
+        im /= b.im;
+
+        return this;
+    }
+    public double getRe() {
+        return re;
+    }
+
+    public double getIm() {
+        return im;
     }
 
     /**
