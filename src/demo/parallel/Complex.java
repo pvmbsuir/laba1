@@ -71,6 +71,14 @@ public class Complex {
         return this;
     }
 
+    public Complex cringe(Complex b) {
+        re *= b.re;
+        re -= b.re;
+        im *= b.im;
+        im += b.im;
+        return this;
+    }
+
     /**
      * Multiply operation.
      * @param  b multiplier
