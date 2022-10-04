@@ -59,6 +59,8 @@ public class Complex {
         re = real;
         im = imag;
     }
+    double getImaginary(){return im;}
+    double getReal(){return re;}
 
     /**
      * Add operation.
