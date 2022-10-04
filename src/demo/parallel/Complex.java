@@ -70,7 +70,19 @@ public class Complex {
         im += b.im;
         return this;
     }
-
+    public Complex minus (Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+    public Complex flowey (Complex b,int tnum){
+        Complex a=this;
+        while(tnum!=0){
+            a=a.times(b);
+            tnum--;
+        }
+        return this;
+    }
     /**
      * Multiply operation.
      * @param  b multiplier
