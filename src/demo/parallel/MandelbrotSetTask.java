@@ -215,7 +215,7 @@ class MandelbrotSetTask extends Task<Long> {
     @Override
     protected Long call() throws Exception {
         synchronized(pixelWriter) {
-            // Prepares an image 
+            // Prepares an image
             for (int x = 0; x < width; x++) {
                 for (int y = 0; y < height; y++) {
                     pixelWriter.setColor(x, y, Color.TRANSPARENT);
@@ -276,6 +276,9 @@ class MandelbrotSetTask extends Task<Long> {
         Complex c = new Complex(0, 0);
         do {
             c = c.times(c).plus(comp);
+            c = c.times(c).times(c).plus(comp);
+            c = c.times(c).minus(comp);
+            c = c.times(c).times(c).minus(comp).div(comp);
             count++;
         } while (count < CAL_MAX_COUNT && c.lengthSQ() < LENGTH_BOUNDARY);
         return count;
@@ -351,13 +354,13 @@ class MandelbrotSetTask extends Task<Long> {
          * Color stops for colors table: color values
          */
         Color[] cc = {
-            Color.rgb(40, 0, 0),
-            Color.RED,
-            Color.WHITE,
-            Color.RED,
-            Color.rgb(100, 0, 0),
-            Color.RED,
-            Color.rgb(50, 0, 0)
+                Color.rgb(100, 0, 0),
+                Color.BLUE,
+                Color.GREEN,
+                Color.RED,
+                Color.rgb(0, 200, 0),
+                Color.WHITE,
+                Color.rgb(0, 0, 100)
         };
         
         /**
