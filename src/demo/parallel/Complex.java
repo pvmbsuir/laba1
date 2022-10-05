@@ -71,6 +71,13 @@ public class Complex {
         return this;
     }
 
+    public Complex dividedBy(Complex c) {
+        double denom = c.re * c.re + c.im * c.im;
+        if (denom == 0)
+            return new Complex(Double.NaN,Double.NaN);
+        else
+            return new Complex((re * c.re + im * c.im) / denom, (im * c.re - re * c.im) / denom);
+    }
     /**
      * Multiply operation.
      * @param  b multiplier
