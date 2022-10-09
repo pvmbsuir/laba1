@@ -60,6 +60,9 @@ public class Complex {
         im = imag;
     }
 
+
+
+
     /**
      * Add operation.
      * @param b summand
@@ -70,6 +73,13 @@ public class Complex {
         im += b.im;
         return this;
     }
+
+    public Complex mul(Complex b) {
+        re = re*b.re;
+        return this;
+    }
+
+
 
     /**
      * Multiply operation.
@@ -84,7 +94,6 @@ public class Complex {
         im = imag;
         return this;
     }
-
     /**
      * Square of Complex object's length, we're using square of length to 
      * eliminate the computation of square root
