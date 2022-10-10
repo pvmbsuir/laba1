@@ -30,20 +30,9 @@
  */
 package demo.parallel;
 
+import org.junit.Assert;
+import org.junit.Test;
 
-/**
- * A complex number is a number that can be expressed in the form a + b * i, where
- * a and b are real numbers and i is the imaginary unit, which satisfies the
- * equation i ^ 2 = -1. a is the real part and b is the imaginary part of the
- * complex number.
- * <p><i>
- * This source code is provided to illustrate the usage of a given feature
- * or technique and has been deliberately simplified. Additional steps
- * required for a production-quality application, such as security checks,
- * input validation and proper error handling, might not be present in
- * this sample code.</i>
- * @author Alexander Kouznetsov, Tristan Yan
- */
 public class Complex {
     
     private double re;   // the real part
@@ -70,12 +59,23 @@ public class Complex {
         im += b.im;
         return this;
     }
+    public Complex minus(Complex b)
+    {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
 
-    /**
-     * Multiply operation.
-     * @param  b multiplier
-     * @return this Complex object whose value is this * b
-     */
+    public Complex div(Complex b)
+    {
+        Complex a = this;
+        double real = (a.re * b.re + a.im * b.im)/(b.re * b.re + b.im * b.im);
+        double imag = (a.im * b.re - a.re * b.im)/(b.re * b.re + b.im * b.im);
+        re = real;
+        im = imag;
+        return this;
+    }
+
     public Complex times(Complex b) {
         Complex a = this;
         double real = a.re * b.re - a.im * b.im;
@@ -92,5 +92,21 @@ public class Complex {
     */
     public double lengthSQ() {
         return re * re + im * im;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Complex complex = (Complex) o;
+
+        if (Double.compare(complex.re, re) != 0) {
+            return false;
+        }
+        return Double.compare(complex.im, im) == 0;
     }
 }
