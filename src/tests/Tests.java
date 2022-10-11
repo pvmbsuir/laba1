@@ -8,10 +8,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Tests {
     @Test
     public void Sub_test() throws Exception {
-        Complex a = new Complex(6, 3);
+        Complex a = new Complex(5, 3);
         Complex b = new Complex(4,2);
         a.plus(b);
-        assertEquals(10, a.getRe());
+        assertEquals(9, a.getRe());
         assertEquals(5, a.getIm());
     }
 
