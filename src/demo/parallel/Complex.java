@@ -45,15 +45,15 @@ package demo.parallel;
  * @author Alexander Kouznetsov, Tristan Yan
  */
 public class Complex {
-    
+
     private double re;   // the real part
     private double im;   // the imaginary part
 
-    /** 
+    /**
      * create a new object with the given real and imaginary parts
-     * 
+     *
      * @param real a complex number real part
-     * @param imag a complex number imaginary part 
+     * @param imag a complex number imaginary part
      */
     public Complex(double real, double imag) {
         re = real;
@@ -95,7 +95,6 @@ public class Complex {
         return this;
     }
 
-
     /**
      * Divide operation.
      * @param  b divisor
@@ -103,7 +102,7 @@ public class Complex {
      */
     public Complex divide(Complex b) {
         Complex a = this;
-        double real = a.re * b.re - a.im * b.im;
+        double real = a.re * b.re + a.im * b.im;
         double imag = a.im * b.re - a.re * b.im;
         re = real / b.lengthSQ();
         im = imag / b.lengthSQ();
@@ -111,11 +110,17 @@ public class Complex {
     }
 
     /**
-     * Square of Complex object's length, we're using square of length to 
+     * Square of Complex object's length, we're using square of length to
      * eliminate the computation of square root
      * @return square of length
     */
     public double lengthSQ() {
+
         return re * re + im * im;
     }
+    public double getRe() {
+        return re;
+    }
+    public double getIm() {
+        return im;}
 }
