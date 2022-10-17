@@ -279,7 +279,7 @@ class MandelbrotSetTask extends Task<Long> {
             c = c.plus(c)
                     .times(c.plus(comp))
                     .times(c)
-                    .dividedBy(new Complex(0, 7));
+                    .divide(new Complex(0, 7));
             count++;
         } while (count < CAL_MAX_COUNT && c.lengthSQ() < LENGTH_BOUNDARY);
         return count;

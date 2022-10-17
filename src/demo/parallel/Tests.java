@@ -16,7 +16,7 @@ public class Tests {
     @Test
     void complexDivideOperationTest() {
         Complex complex = new Complex(12, 2);
-        complex = complex.dividedBy(new Complex(2, 2));
+        complex = complex.divide(new Complex(2, 2));
 
         assert complex.getReal() == 3.5f && complex.getImaginary() == -2.5f;
     }
