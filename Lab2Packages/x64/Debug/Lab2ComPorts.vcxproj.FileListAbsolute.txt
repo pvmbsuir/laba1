@@ -1,0 +1,11 @@
+C:\_Documents\BSUIR\5_Sem\TOKS\Lab2ComPorts\x64\Debug\Lab2ComPorts.vcxproj.AssemblyReference.cache
+C:\_Documents\BSUIR\5_Sem\TOKS\Lab2ComPorts\x64\Debug\Lab2ComPorts.vcxproj.SuggestedBindingRedirects.cache
+C:\_Documents\BSUIR\5_Sem\TOKS\Lab2ComPorts\x64\Debug\Lab2ComPorts.exe
+C:\_Documents\BSUIR\5_Sem\TOKS\Lab3Packages\x64\Debug\Lab2ComPorts.vcxproj.AssemblyReference.cache
+C:\_Documents\BSUIR\5_Sem\TOKS\Lab3Packages\x64\Debug\Lab2ComPorts.vcxproj.SuggestedBindingRedirects.cache
+C:\_Documents\BSUIR\5_Sem\TOKS\Lab3Packages\x64\Debug\Lab2Packages.exe
+C:\_Documents\BSUIR\5_Sem\TOKS\Lab2Packages\x64\Debug\Lab2Packages.exe
+C:\_Documents\BSUIR\5_Sem\TOKS\Lab2Packages\x64\Debug\Lab2ComPorts.vcxproj.AssemblyReference.cache
+C:\_Documents\BSUIR\5_Sem\TOKS\Lab2Packages\x64\Debug\Lab2ComPorts.vcxproj.SuggestedBindingRedirects.cache
+C:\_Documents\BSUIR\5_Sem\TOKS\Lab2Packages\x64\Debug\Lab2ComPorts.MyForm.resources
+C:\_Documents\BSUIR\5_Sem\TOKS\Lab2Packages\x64\Debug\Lab2ComPorts.vcxproj.GenerateResource.cache

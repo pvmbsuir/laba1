@@ -1,0 +1,6 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (Lab2ComPorts.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  MyForm.cpp
+C:\_Documents\BSUIR\5_Sem\TOKS\Lab2Packages\MyForm.h(369,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\_Documents\BSUIR\5_Sem\TOKS\Lab2Packages\MyForm.cpp(7,33): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  Lab2ComPorts.vcxproj -> C:\_Documents\BSUIR\5_Sem\TOKS\Lab2Packages\x64\Debug\Lab2Packages.exe
